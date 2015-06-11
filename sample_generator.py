@@ -107,13 +107,13 @@ class FoldingModel(BrownianDynamics):
 ################################################################################
 
 def get_asymmetric_double_well_data(x0, nstep, nskip=1, dt=0.01, kT=10.0, mass=1.0, damping=1.0):
-    r"""hjb"""
+    r"""wrapper for the asymmetric double well generator"""
     adw = AsymmetricDoubleWell(dt, kT, mass=mass, damping=damping)
     return adw.sample(x0, nstep, nskip=nskip)
 
 def get_folding_model_data(
         rvec0, nstep, nskip=1, dt=0.01, kT=10.0, mass=1.0, damping=1.0, rcut=3.0):
-    r"""hjb"""
+    r"""wrapper for the folding model generator"""
     fm = FoldingModel(dt, kT, mass=mass, damping=damping, rcut=rcut)
     return fm.sample(rvec0, nstep, nskip=nskip)
 
