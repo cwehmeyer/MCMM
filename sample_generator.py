@@ -75,9 +75,9 @@ class AsymmetricDoubleWell(BrownianDynamics):
         r"""generate nsteps sample points"""
         x = np.zeros(shape=(nsteps+1,))
         x[0] = x0
-        for t in xrange(nsteps):
+        for t in range(nsteps):
             q = x[t]
-            for s in xrange(nskip):
+            for s in range(nskip):
                 q = self.step(q)
             x[t+1] = q
         return x
@@ -93,9 +93,9 @@ class FoldingModel(BrownianDynamics):
         r"""generate nsteps sample points"""
         rvec = np.zeros(shape=(nsteps+1, self.dim))
         rvec[0, :] = rvec0[:]
-        for t in xrange(nsteps):
+        for t in range(nsteps):
             q = rvec[t, :]
-            for s in xrange(nskip):
+            for s in range(nskip):
                 q = self.step(q)
             rvec[t+1, :] = q[:]
         return rvec
